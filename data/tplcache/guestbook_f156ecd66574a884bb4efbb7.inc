@@ -1,0 +1,190 @@
+<?php
+if(!isset($GLOBALS['_vars'])) $GLOBALS['_vars'] = array(); 
+$fields = array();
+?><!DOCTYPE HTML>
+<html class="" >
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,minimal-ui">
+<meta name="format-detection" content="telephone=no">
+<title><?php echo $cfg_webname; ?> - 在线留言</title>
+
+<link rel="stylesheet" type="text/css" href="<?php echo $cfg_templeturl; ?>/moban/style/basic.css?6130">
+<link rel="stylesheet" type="text/css" href="<?php echo $cfg_templeturl; ?>/moban/style/message_index_cn.css?1549976579">
+<style>
+body{
+    background-color: !important;font-family: !important;}
+</style>
+<!--[if lte IE 9]>
+<script src="<?php echo $cfg_templeturl; ?>/moban/style/lteie9.js"></script>
+<![endif]-->
+<script src="<?php echo $cfg_templeturl; ?>/moban/style/met_temdemo.js?20180627"></script>
+</head>
+<!--[if lte IE 8]>
+<div class="text-xs-center m-b-0 bg-blue-grey-100 alert">
+    <button type="button" class="close" aria-label="Close" data-dismiss="alert">
+        <span aria-hidden="true">×</span>
+    </button>
+    你正在使用一个 <strong>过时</strong> 的浏览器。请 <a href=https://browsehappy.com/ target=_blank>升级您的浏览器</a>，以提高您的体验。</div>
+<![endif]-->
+<body>
+            <body class="met-navfixed">
+
+<?php pasterTempletDiy("moban/head.htm"); ?>
+
+                <div class="banner_met_11_3 page-bg" style='' m-id='2' m-type="banner">
+                <div class="slick-slide">
+        <img class="cover-image" src="https://images.mituo.cn/mui010/upload/mui010/201801/1516790621.jpg" srcset='https://images.mituo.cn/mui010/upload/mui010/thumb_src/x_767/1516790621.jpg 767w,https://images.mituo.cn/mui010/upload/mui010/201801/1516790621.jpg' sizes="(max-width: 767px) 767px" alt="" data-height='0|0|0' data-fade="false" data-autoplayspeed=4000 data-speed="1000">
+                            </div>
+    </div>
+
+
+<div class="subcolumn_nav_met_11_3" m-id='33' m-type='nocontent'>
+  <div class="container">
+    <div class="row">
+      <div class="clearfix">
+        <!-- 左侧网址导航 -->
+        <div class="subcolumn-nav-location clearfix ulstyle">
+          <li class="location">
+          您的位置：         </li>
+          <li>
+            <a href="<?php echo $cfg_basehost;?>" title="<?php echo $cfg_webname;?>">网站首页 > </a> 
+          </li>
+          <li>
+              在线留言
+            </li> 
+        </div>
+
+        <!-- 右侧产品类型 -->
+        <div class="subcolumn-nav text-xs-left">
+          
+          <ul class="subcolumn_nav_met_11_3-ul m-b-0 p-y-10 p-x-0 ulstyle">
+              
+            <li>
+              <a href="<?php echo $GLOBALS['cfg_basehost']; ?>/about"  title="<?php echo $fields['seotitle']; ?>" class="link" >关于我们</a>
+            </li>
+
+             <li>
+              <a href="<?php echo $GLOBALS['cfg_basehost']; ?>/about/1" title="公司简介" 
+              class=' link'>公司简介</a>
+            </li>
+             <li>
+              <a href="<?php echo $GLOBALS['cfg_basehost']; ?>/about/2" title="公司文化" 
+              class=' link'>公司文化</a>
+            </li>
+             <li>
+              <a href="<?php echo $GLOBALS['cfg_basehost']; ?>/plus/guestbook.php" title="在线留言" 
+              class='active link'>在线留言</a>
+            </li>
+             <li>
+              <a href="<?php echo $GLOBALS['cfg_basehost']; ?>/about/4" title="资质认证" 
+              class=' link'>资质认证</a>
+            </li>
+             <li>
+              <a href="<?php echo $GLOBALS['cfg_basehost']; ?>/about/5" title="联系我们" 
+              class=' link'>联系我们</a>
+            </li>
+            
+          </ul>
+        </div>
+    </div>
+
+                  </div>
+  </div>
+</div>
+                
+            <section class="message_list_met_16_1 animsition"  m-id='32' m-type='nocontent'>
+    <div class="container">
+        <div class="row m0">
+<div class="    col-md-8  met-message-body panel panel-body m-b-0" boxmh-mh m-id='noset' m-type='message_list'>
+<div class="row m0">
+  <ul class="list-group list-group-dividered list-group-full met-pager-ajax met-message-list">
+    
+    <?php
+$atts = array();
+$atts['tagname'] = 'datalist';
+$blockValue = $this->refObj->GetArcList($atts,$this->refObj,$fields); 
+if(is_array($blockValue)){
+foreach( $blockValue as $key=>$fields )
+{
+?>
+    <li class="list-group-item">
+      <div class="media">
+        <div class="media-left block pull-xs-left p-r-0">
+          <i class="icon wb-user-circle blue-grey-400"></i>
+        </div>
+        <div class="media-body block pull-xs-left">
+          <h4 class="media-heading font-weight-300 blue-grey-500">
+            <small class="pull-xs-right"><?php echo MyDate('Y-m-d',$fields['dtime']); ?></small>
+            <?php echo $fields['uname']; ?>     
+          </h4>
+          <p class='m-b-0'><?php echo $fields['msg']; ?></p>
+
+          <?php if($g_isadmin) { ?> 
+            <div class="content well m-t-10 m-b-0"> 
+            <p class='m-b-0'>[邮箱]<?php echo $fields["email"]?></p>
+            <p class='m-b-0'>[QQ]<?php echo $fields["qq"]?></p>
+            <p class='m-b-0'>[联系方式]<?php echo $fields['homepage']?></p><a href='guestbook.php?action=admin&id=<?php echo $fields['id']; ?>'>[回复/编辑]</a><a href='guestbook.php?action=admin&id=<?php echo $fields['id']; ?>&job=del'>[删除]</a></div>
+          <?php }  ?>
+
+        </div>
+      </div>
+    </li>
+<?php
+}
+}?>
+
+  </ul>
+  <div class='m-t-20 text-xs-center hidden-sm-down' m-type="nosysdata">
+      <div class='met_pager'>
+             <?php
+$atts = array();
+$atts['tagname'] = 'pagelist';
+$atts['listsize'] = '5';
+ echo $this->refObj->GetPageList($atts,$this->refObj,$fields); 
+?>
+
+      </div>
+        </div>
+    <div class="met_pager met-pager-ajax-link hidden-md-up" data-plugin="appear" data-animate="slide-bottom" data-repeat="false" m-type="nosysdata">
+        <button type="button" class="btn btn-primary btn-block btn-squared ladda-button" id="met-pager-btn" data-plugin="ladda" data-style="slide-left" data-url="" data-page="1">
+            <i class="icon wb-chevron-down m-r-5" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+</div>
+    
+                                                <div class="col-md-4 p-l-30 message_form" m-id='31' m-type='nocontent'>
+              <div class="row">
+        <div class="met-message-submit panel panel-body m-b-0" boxmh-h>
+<form method='POST' class="met-form met-form-validation"  enctype="multipart/form-data" action='guestbook.php' name="form1">
+        <input type='hidden' name='action' value='save' />
+      <input type='hidden' name='lang' value='cn' />    <div class='form-group'><input name='uname' class='form-control' type='text' placeholder='姓名 '  /></div>
+    <div class='form-group'><input name='homepage' class='form-control' type='text' placeholder='电话 '  /></div>
+    <div class='form-group'><input name='email' class='form-control' type='text' placeholder='E-mail '  /></div>
+    <div class='form-group'><input name='qq' class='form-control' type='text' placeholder='联系方式 '  /></div>
+    <div class='form-group'><textarea name='msg' class='form-control'  placeholder='留言内容 ' rows='5'></textarea></div>
+    <div class='form-group'><div class='input-group input-group-icon'>
+          <input name='validate' type='text' id="vdcode2" class='form-control input-codeimg ipt-txt' placeholder='验证码' required data-fv-message='不能为空'>
+              
+
+          <span class='input-group-addon p-5'>
+          <img src='../include/vdimgck.php' align='absmiddle' role='button'>
+          </span>
+        </div>
+      </div>
+      <div class="form-group m-b-0">
+        <button type="submit" class="btn btn-primary btn-block btn-squared">提交留言</button>
+      </div>
+</form>      
+
+ </div>
+      </div>
+        </div>
+
+            </div>
+        </div>
+    </section>
+<?php pasterTempletDiy("moban/footer.htm"); ?>

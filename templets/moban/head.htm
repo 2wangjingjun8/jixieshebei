@@ -1,0 +1,91 @@
+    <header class="head_nav_met_11_3-header navbar-fixed-top" m-id='1' m-type="head_nav">
+<div class="container top-box">
+<div class="row">
+    <div class="logo-box">
+        <a href="{dede:global.cfg_basehost/}" class="met-logo" title="{dede:global.cfg_webname/}">
+            <h1 hidden>{dede:global.cfg_webname/}</h1>
+            <div class="vertical-align-middle">
+            <img src="{dede:global.cfg_templets_skin/}/images/1516783999.png" alt="{dede:global.cfg_webname/}"/>
+        </div>
+        </a>
+    </div>
+    <div class="search-box">
+        <a href="{dede:global.cfg_cmsurl/}/plus/search.php" class="m-search">
+        <i class="icon wb-search" aria-hidden="true"></i>
+        </a>
+            <div class="search-index">
+            <form method="get" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+                                <!-- add start -->
+                            <input type="hidden" name='lang' value="cn">
+                            <input type="hidden" name='class1' value="10001">
+                            <input type="hidden" name='class2' value="">
+                            <input type="hidden" name='class3' value="">
+                            <input type="hidden" name='search' value="search">
+                            <input type="hidden" name='order' value="com">
+                            <!-- add end -->
+                        <div class="input-search">
+                            <button type="submit" class="input-search-btn"><i class="icon wb-search" aria-hidden="true"></i></button>
+                            <div class="form-group">
+                                <input type="text" class="" name="q" value="" placeholder="搜索" data-fv-notempty="true" data-fv-message="不能为空">
+                            </div>
+                        </div>
+                    </form>
+            </div>
+            <div class="contact-index">
+                <p class="tel">
+                    <i class="fa fa-phone"></i>
+                    {dede:global.cfg_tel/}</p>
+                <p class="mail">
+                    <i class="fa"></i>
+                    商务合作：{dede:global.cfg_email/}</p>
+            </div>
+    </div>
+</div>
+</div>
+    <nav class="navbar navbar-default box-shadow-none head_nav_met_11_3">
+        <div class="container">
+            <div class="row">
+                <button type="button" class="navbar-toggler hamburger hamburger-close collapsed  met-nav-toggler" data-target="#met-nav-collapse" data-toggle="collapse">
+                    <span class="sr-only"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+<!-- 会员注册登录 -->
+                    
+                <!-- 会员注册登录 -->
+                <div class="collapse navbar-collapse navbar-collapse-toolbar pull-md-left p-0" id="met-nav-collapse">
+                    <ul class="nav navbar-nav navlist">
+                        <li class='nav-item'>
+                            <a href="{dede:global.cfg_basehost/}" title="网站首页" data-title="网站首页" class="nav-link active ">网站首页</a>
+                        </li>
+                        {dede:channelartlist typeid='1,2,3,4' }
+                        <li class="nav-item dropdown m-l-0">
+                            <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}" data-title="{dede:field name='typename'/}" class="nav-link dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" target='_self' >{dede:field name='typename'/}</a>
+                            <div class="dropdown-menu dropdown-menu-right secondmenu">
+                                <a href="{dede:field name='typeurl'/}"  title="全部" class='dropdown-item nav-parent hidden-lg-up ' target='_self'>全部</a>
+                                {dede:channel type='son' noself='yes' }
+                                <a href="[field:typelink/]" target='_self' title="[field:typename/]" class='dropdown-item  navlist-2'>[field:typename/]</a>  
+                                {/dede:channel}
+
+                            </div>
+                        </li>
+                        {/dede:channelartlist}
+
+                        {dede:type typeid='5' }
+                        <li class='nav-item m-l-0'>
+                            <a href="[field:typelink/]" target='_self' title="[field:typename/]" class="nav-link " data-title="[field:typename/]">[field:typename/]</a>
+                        </li>
+                        {/dede:type}
+                        {dede:type typeid='6' }
+                        <li class='nav-item m-l-0'>
+                            <a href="[field:typelink/]" target='_self' title="[field:typename/]" class="nav-link " data-title="[field:typename/]">[field:typename/]</a>
+                        </li>
+                        {/dede:type}
+                        <!--简繁体切换-->
+                        <!--简繁体切换--><!--多语言-->
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    </header>

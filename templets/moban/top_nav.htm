@@ -1,0 +1,27 @@
+
+<div class="subcolumn_nav_met_11_3" m-id='22' m-type='nocontent'>
+    <div class="container">
+        <div class="row">
+            <div class="clearfix">
+                <!-- 左侧网址导航 -->
+                <div class="subcolumn-nav-location clearfix ulstyle">
+                    <li class="location">您的位置：{dede:field name='position'/}</li>
+                </div>
+
+                <!-- 右侧产品类型 -->
+                <div class="subcolumn-nav text-xs-left">
+                    <ul class="subcolumn_nav_met_11_3-ul m-b-0 p-y-10 p-x-0 ulstyle">
+                            
+                        {dede:channel   row='5'  type ='son'   currentstyle="<li><a href='~typelink~' class='active link'>~typename~</a> </li>"                   }
+                        <li>
+                            <a href="[field:typelink/]" title="[field:typename/]" 
+                            class=' link'>[field:typename/]</a>
+                        </li>
+                        {/dede:channel}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

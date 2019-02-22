@@ -1,0 +1,83 @@
+
+<!DOCTYPE HTML>
+<html class="" >
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,minimal-ui">
+<meta name="format-detection" content="telephone=no">
+<title>搜索页-{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}">
+<meta name="keywords" content="{dede:field name='keywords'/}">
+<meta name="generator" content="MetInfo 6.1.3" data-variable="https://mb.mituo.cn/mui010/|cn|cn|mui010|11|20|0" data-user_name="">
+<link href="https://mb.mituo.cn/mui010/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/style/basic.css?6130">
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/style/search_cn.css?1550236336">
+<style>
+body{
+    background-color: !important;font-family: !important;}
+</style>
+<!--[if lte IE 9]>
+<script src="{dede:global.cfg_templets_skin/}/style/lteie9.js"></script>
+<![endif]-->
+<script src="{dede:global.cfg_templets_skin/}/style/met_temdemo.js?20180627"></script>
+</head>
+<!--[if lte IE 8]>
+<div class="text-xs-center m-b-0 bg-blue-grey-100 alert">
+    <button type="button" class="close" aria-label="Close" data-dismiss="alert">
+        <span aria-hidden="true">×</span>
+    </button>
+    你正在使用一个 <strong>过时</strong> 的浏览器。请 <a href=https://browsehappy.com/ target=_blank>升级您的浏览器</a>，以提高您的体验。</div>
+<![endif]-->
+<body>
+            <body class="met-navfixed">
+{dede:include filename="head.htm"/}
+
+                <div class="banner_met_11_3 page-bg" style='' m-id='2' m-type="banner">
+                <div class="slick-slide">
+        <img class="cover-image" src="https://images.mituo.cn/mui010/upload/mui010/201801/1516790621.jpg" srcset='https://images.mituo.cn/mui010/upload/mui010/thumb_src/x_767/1516790621.jpg 767w,https://images.mituo.cn/mui010/upload/mui010/201801/1516790621.jpg' sizes="(max-width: 767px) 767px" alt="" data-height='0|0|0' data-fade="false" data-autoplayspeed=4000 data-speed="1000">
+                            </div>
+    </div>
+
+
+        <main class="search_met_16_1 page-content" m-id='28'>
+	<div class="container">
+		<div class="row">
+			<div class="met-search-body panel panel-body m-b-0">
+						<form method='get' class="page-search-form form-group" role="search" action='{dede:global.cfg_cmsurl/}/plus/search.php'>
+			<input type='hidden' name='lang' value='cn' />
+			<div class="input-search input-search-dark">
+				<button type="submit" class="input-search-btn"><i class="icon wb-search" aria-hidden="true"></i></button>
+				<input
+				type="text"
+				class="form-control input-lg"
+				name="q"
+				value="{dede:php}echo $_GET['q'];{/dede:php}"
+				placeholder="请输入搜索关键词！"
+				required
+				data-fv-message = "不能为空"
+				>
+			</div>
+		</form>
+	<ul class="list-group list-group-full list-group-dividered m-t-20 met-pager-ajax met-search-list" >
+		{dede:list perpage='5'}	
+		<li class="list-group-item">
+			<h4><a href="[field:arcurl/]" title="[field:title/]" target="_self">[field:title/]</a></h4>
+			<a class="search-result-link" href="[field:arcurl/]" target="_self">[field:arcurl/]</a>
+			<p>[field:description/]...</p>
+		</li>
+		{/dede:list}
+<!--分页-->
+			<div class='m-t-20 text-xs-center hidden-sm-down' m-type="nosysdata">
+			         <div class='met_pager'>
+			         {dede:pagelist listsize='4'/}
+					</div>
+			</div>
+					</div>
+<!--分页-->
+			</div>
+		</div>
+	</div>
+</main>
+{dede:include filename="footer.htm"/}

@@ -1,0 +1,42 @@
+<?php
+$z[0]=Array("global","",188,215);
+$z[0][4]=array();
+$z[0][4]['name']="cfg_basehost";
+$z[1]=Array("global","",241,267);
+$z[1][4]=array();
+$z[1][4]['name']="cfg_webname";
+$z[2]=Array("global","",294,320);
+$z[2][4]=array();
+$z[2][4]['name']="cfg_webname";
+$z[3]=Array("global","",398,430);
+$z[3][4]=array();
+$z[3][4]['name']="cfg_templets_skin";
+$z[4]=Array("global","",459,485);
+$z[4][4]=array();
+$z[4][4]['name']="cfg_webname";
+$z[5]=Array("global","",579,604);
+$z[5][4]=array();
+$z[5][4]['name']="cfg_cmsurl";
+$z[6]=Array("global","",793,818);
+$z[6][4]=array();
+$z[6][4]['name']="cfg_cmsurl";
+$z[7]=Array("global","",2050,2072);
+$z[7][4]=array();
+$z[7][4]['name']="cfg_tel";
+$z[8]=Array("global","",2187,2211);
+$z[8][4]=array();
+$z[8][4]['name']="cfg_email";
+$z[9]=Array("global","",3066,3093);
+$z[9][4]=array();
+$z[9][4]['name']="cfg_basehost";
+$z[10]=Array("channelartlist","\r\n                        <li class=\"nav-item dropdown m-l-0\">\r\n                            <a href=\"{dede:field name='typeurl'/}\" title=\"{dede:field name='typename'/}\" data-title=\"{dede:field name='typename'/}\" class=\"nav-link dropdown-toggle \" data-toggle=\"dropdown\" data-hover=\"dropdown\" target='_self' >{dede:field name='typename'/}</a>\r\n                            <div class=\"dropdown-menu dropdown-menu-right secondmenu\">\r\n                                <a href=\"{dede:field name='typeurl'/}\"  title=\"全部\" class='dropdown-item nav-parent hidden-lg-up ' target='_self'>全部</a>\r\n                                {dede:channel type='son' noself='yes' }\r\n                                <a href=\"[field:typelink/]\" target='_self' title=\"[field:typename/]\" class='dropdown-item  navlist-2'>[field:typename/]</a>  \r\n                                {/dede:channel}\r\n\r\n                            </div>\r\n                        </li>\r\n                        ",3240,4266);
+$z[10][4]=array();
+$z[10][4]['typeid']="1,2,3,4";
+$z[11]=Array("type","\r\n                        <li class='nav-item m-l-0'>\r\n                            <a href=\"[field:typelink/]\" target='_self' title=\"[field:typename/]\" class=\"nav-link \" data-title=\"[field:typename/]\">[field:typename/]</a>\r\n                        </li>\r\n                        ",4294,4608);
+$z[11][4]=array();
+$z[11][4]['typeid']="5";
+$z[12]=Array("type","\r\n                        <li class='nav-item m-l-0'>\r\n                            <a href=\"[field:typelink/]\" target='_self' title=\"[field:typename/]\" class=\"nav-link \" data-title=\"[field:typename/]\">[field:typename/]</a>\r\n                        </li>\r\n                        ",4634,4948);
+$z[12][4]=array();
+$z[12][4]['typeid']="6";
+
+?>
